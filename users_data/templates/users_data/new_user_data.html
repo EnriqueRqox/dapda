@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/favicon.ico"/>
+
+    <meta charset="UTF-8">
+    <title>Opel</title>
+
+    <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/favicon.ico"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <style>
+        .img {
+            width: 100%;
+            height: auto;
+        }
+        .main-container {
+            margin-top: 1rem;
+        }
+        select, input {
+            border: solid 1px #c6b407;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    {% block section %}
+    <nav class="navbar navbar-inverse bg-inverse">
+        <h2 class="text-white">Solicita más información</h2>
+    </nav>
+
+    <div class="container main-container">
+
+
+        <div class="row">
+            <div class ="col">
+                <img src="https://i.ytimg.com/vi/bB1ibpl4OfU/maxresdefault.jpg" class="img-fluid img animated fadeIn" alt="anuncio opel">
+            </div>
+        </div>
+
+        <div class="row main-container">
+            <div class="col animated fadeIn fast">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                        <button class="btn btn-warning">Enviar datos</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col hidden-sm-down">
+                <img src="http://pngimg.com/uploads/car_logo/car_logo_PNG1659.png" class="img-fluid img animated fadeIn fast" alt="logotipo opel">
+            </div>
+        </div>
+
+    </div>
+
+    {% endblock %}
+
+</body>
