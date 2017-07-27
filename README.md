@@ -1,5 +1,5 @@
 # Test dapda.com
-
+### Tecnología utilizada: Django
 Instrucciones de funcionamiento:
 
 1. Descargar los ficheros del repositorio.
